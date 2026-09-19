@@ -1,18 +1,30 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
+using UnityEditor.Rendering;
 
 [RequireComponent(typeof(CharacterController))]
 public class FPSController : MonoBehaviour
 {
+    [Header("Player controls")]
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float mouseSensitivity = 0.1f;
     [SerializeField] Transform cameraTransform;
+
+    [Header("Interaction settings")]
+    [SerializeField] private float interactionDistance = 3f;
+    [SerializeField] private TextMeshProUGUI interactionPrompt;
+    [SerializeField] private TextMeshProUGUI interactionMessage;
 
     CharacterController controller;
     float verticalVelocity;
     float cameraPitch;
 
     private bool inputEnabled = true;
+    private bool displayingMessages = false;
+
+    private Interactable interactable;
 
     void Awake()
     {
@@ -60,10 +72,66 @@ public class FPSController : MonoBehaviour
             cameraTransform.localRotation =
                 Quaternion.Euler(cameraPitch, 0f, 0f);
         }
+
+        if (!displayingMessages)
+            CheckInteractionRaycast();
+        if (interactable && !displayingMessages)
+            CheckInteractionKey();
     }
 
     public void SetInputEnabled(bool enabled)
     {
         inputEnabled = enabled;
+    }
+
+    private void CheckInteractionRaycast()
+    {
+        Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
+
+        if (Physics.Raycast(ray, out RaycastHit hit, interactionDistance))
+        {
+            interactable = hit.collider.GetComponentInParent<Interactable>();
+
+            if (interactable != null)
+            {
+                interactionPrompt.text = interactable.GetInteractionText();
+                interactionPrompt.gameObject.SetActive(true);
+
+                return;
+            }
+        }
+
+        interactable = null;
+        interactionPrompt.gameObject.SetActive(false);
+    }
+
+    private void CheckInteractionKey()
+    {
+        if (Input.GetKeyDown(interactable.GetInteractionKey()))
+        {
+            StartCoroutine(DisplayInteractionMessages());
+        }
+    }
+
+    private IEnumerator DisplayInteractionMessages()
+    {
+        displayingMessages = true;
+
+        string[] messages = interactable.GetInteractionMessage();
+
+        interactionMessage.gameObject.SetActive(true);
+        interactionPrompt.text = null;
+
+        foreach (string message in messages)
+        {
+            interactionMessage.text = message;
+
+            yield return new WaitForSeconds(2f);
+        }
+
+        interactionMessage.text = "";
+        interactionMessage.gameObject.SetActive(false);
+
+        displayingMessages = false;
     }
 }
