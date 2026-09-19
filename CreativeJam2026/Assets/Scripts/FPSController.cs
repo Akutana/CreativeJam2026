@@ -12,6 +12,8 @@ public class FPSController : MonoBehaviour
     float verticalVelocity;
     float cameraPitch;
 
+    private bool inputEnabled = true;
+
     void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -21,6 +23,9 @@ public class FPSController : MonoBehaviour
 
     void Update()
     {
+        if (!inputEnabled)
+            return;
+
         // Movement
         Vector2 input = Keyboard.current != null
             ? new Vector2(
@@ -55,5 +60,10 @@ public class FPSController : MonoBehaviour
             cameraTransform.localRotation =
                 Quaternion.Euler(cameraPitch, 0f, 0f);
         }
+    }
+
+    public void SetInputEnabled(bool enabled)
+    {
+        inputEnabled = enabled;
     }
 }
