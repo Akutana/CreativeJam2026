@@ -1015,6 +1015,7 @@ MonoBehaviour:
   - Test1
   - Test2
   interactionKey: 101
+  nextMessageKey: 32
 --- !u!1 &1419484455
 GameObject:
   m_ObjectHideFlags: 0

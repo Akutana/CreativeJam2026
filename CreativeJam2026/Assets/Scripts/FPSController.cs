@@ -25,6 +25,10 @@ public class FPSController : MonoBehaviour
     private bool displayingMessages = false;
 
     private Interactable interactable;
+    private KeyCode nextMessageKey;
+
+    private string[] messages;
+    private int currentMessageIndex;
 
     void Awake()
     {
@@ -77,6 +81,8 @@ public class FPSController : MonoBehaviour
             CheckInteractionRaycast();
         if (interactable && !displayingMessages)
             CheckInteractionKey();
+        if (displayingMessages)
+            CheckNextMessageKey();
     }
 
     public void SetInputEnabled(bool enabled)
@@ -109,29 +115,43 @@ public class FPSController : MonoBehaviour
     {
         if (Input.GetKeyDown(interactable.GetInteractionKey()))
         {
-            StartCoroutine(DisplayInteractionMessages());
+            StartInteractionMessages();
         }
     }
 
-    private IEnumerator DisplayInteractionMessages()
+    private void CheckNextMessageKey()
     {
+        if (Input.GetKeyDown(nextMessageKey))
+        {
+            currentMessageIndex++;
+
+            if (currentMessageIndex < messages.Length)
+            {
+                interactionMessage.text = messages[currentMessageIndex];
+            }
+            else
+            {
+                interactionMessage.text = "";
+                interactionMessage.gameObject.SetActive(false);
+
+                nextMessageKey = KeyCode.None;
+                displayingMessages = false;
+            }
+        }
+    }
+
+    private void StartInteractionMessages()
+    {
+        nextMessageKey = interactable.GetNextMessageKey();
+        messages = interactable.GetInteractionMessage();
+        currentMessageIndex = 0;
+
         displayingMessages = true;
 
-        string[] messages = interactable.GetInteractionMessage();
-
+        interactionPrompt.gameObject.SetActive(false);
         interactionMessage.gameObject.SetActive(true);
-        interactionPrompt.text = null;
 
-        foreach (string message in messages)
-        {
-            interactionMessage.text = message;
-
-            yield return new WaitForSeconds(2f);
-        }
-
-        interactionMessage.text = "";
-        interactionMessage.gameObject.SetActive(false);
-
-        displayingMessages = false;
+        if (messages.Length > 0)
+            interactionMessage.text = messages[currentMessageIndex];
     }
 }

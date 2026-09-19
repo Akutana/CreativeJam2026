@@ -20,8 +20,6 @@ public class GameManager : MonoBehaviour
         narrationText.gameObject.SetActive(false);
 
         screenFader.SetClear();
-
-        Debug.Log(currentDay);
     }
 
     private IEnumerator StartDay(int day)
