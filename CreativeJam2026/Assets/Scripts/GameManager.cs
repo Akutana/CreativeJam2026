@@ -12,31 +12,28 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        currentDay = 0;
-        Debug.Log("Starting day 0");
+        StartCoroutine(StartDay(0));
+    }
 
-        screenFader.SetBlack();
+    private IEnumerator StartDay(int day)
+    {
+        currentDay = day;
 
+        yield return FadeTransition();
+
+        Debug.Log("Starting day" + day);
+    }
+
+    private IEnumerator FadeTransition()
+    {
         player.SetInputEnabled(false);
 
-        StartCoroutine(StartGame());
-    }
+        yield return screenFader.FadeIn();
 
-    private void StartDay1()
-    {
-        currentDay = 1;
-        Debug.Log("Starting day 1");
-    }
-
-    private IEnumerator StartGame()
-    {
-        // Black screen
         yield return new WaitForSeconds(blackScreenDuration);
 
-        // Black fade out
         yield return screenFader.FadeOut();
 
-        // Player can now move
         player.SetInputEnabled(true);
     }
 
@@ -45,7 +42,7 @@ public class GameManager : MonoBehaviour
         ////////////////// DEBUG ///////////////////
         if (Input.GetKeyDown(KeyCode.N))
         {
-            StartDay1();
+            StartCoroutine(StartDay(1));
         }
         ////////////////////////////////////////////
     }
