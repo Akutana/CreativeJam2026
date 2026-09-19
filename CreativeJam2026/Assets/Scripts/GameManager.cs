@@ -55,12 +55,37 @@ public class GameManager : MonoBehaviour
         yield return null;
     }
 
+    private IEnumerator GameOver()
+    {
+        Debug.Log("Resetting day 1");
+
+        player.SetInputEnabled(false);
+
+        yield return screenFader.FadeIn();
+
+        // do reset stuff
+
+        yield return StartDay1();
+
+        yield return new WaitForSeconds(blackScreenDuration);
+
+        yield return screenFader.FadeOut();
+
+        player.SetInputEnabled(true);
+    }
+
     private void Update()
     {
         ////////////////// DEBUG ///////////////////
         if (Input.GetKeyDown(KeyCode.N))
         {
             StartCoroutine(StartDay(1));
+        }
+
+        if (Input.GetKeyDown(KeyCode.R) &&
+            currentDay == 1)
+        {
+            StartCoroutine(GameOver());
         }
         ////////////////////////////////////////////
     }
