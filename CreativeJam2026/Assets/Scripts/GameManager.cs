@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,20 +9,36 @@ public class GameManager : MonoBehaviour
     [SerializeField] private FPSController player;
     [SerializeField] private TextMeshProUGUI transitionText;
     [SerializeField] private TextMeshProUGUI narrationText;
+    [SerializeField] private TextMeshProUGUI policeCallText;
+    [SerializeField] private TextMeshProUGUI policeCallPromptText;
 
     [SerializeField] private float blackScreenDuration = 2f;
     [SerializeField] private float transitionDuration = 3f;
 
     [SerializeField] private int choiceTimerDuration = 60;
 
+    [SerializeField] private Button button1;
+    [SerializeField] private Button button2;
+    [SerializeField] private Button button3;
+
+    [SerializeField] private KeyCode callPoliceKey;
+
     int currentDay = -1;
 
     private Coroutine choiceTimerCoroutine;
+
+    private bool choiceTimerStarted = false;
 
     private void Start()
     {
         transitionText.gameObject.SetActive(false);
         narrationText.gameObject.SetActive(false);
+        policeCallText.gameObject.SetActive(false);
+        policeCallPromptText.gameObject.SetActive(false);
+
+        button1.gameObject.SetActive(false);
+        button2.gameObject.SetActive(false);
+        button3.gameObject.SetActive(false);
 
         screenFader.SetClear();
     }
@@ -91,7 +108,7 @@ public class GameManager : MonoBehaviour
         yield return null;
     }
 
-    private IEnumerator GameOver()
+    private IEnumerator GameOver(string message)
     {
         Debug.Log("Resetting day 1");
 
@@ -103,7 +120,7 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(blackScreenDuration);
 
-        transitionText.text = "Game Over";
+        transitionText.text = message;
         transitionText.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(transitionDuration);
@@ -166,13 +183,78 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator StartChoiceTimer()
     {
+        choiceTimerStarted = true;
+
+        policeCallPromptText.text = "Press [" + callPoliceKey + "] to call the police";
+        policeCallPromptText.gameObject.SetActive(true);
+
         yield return new WaitForSeconds(choiceTimerDuration);
 
-        yield return GameOver();
+        yield return GameOver("The killer found you while walking around. He killed you.");
+    }
+
+    public void RightAnswer()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        policeCallText.gameObject.SetActive(false);
+        button1.gameObject.SetActive(false);
+        button2.gameObject.SetActive(false);
+        button3.gameObject.SetActive(false);
+
+        StartCoroutine(Win());
+    }
+
+    public void WrongAnswer()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        policeCallText.gameObject.SetActive(false);
+        button1.gameObject.SetActive(false);
+        button2.gameObject.SetActive(false);
+        button3.gameObject.SetActive(false);
+
+        StartCoroutine(GameOver("The killer saw you accusing other suspects. He killed you."));
+    }
+
+    private IEnumerator CallPolice()
+    {
+        policeCallPromptText.gameObject.SetActive(false);
+
+        if (choiceTimerCoroutine != null)
+        {
+            StopCoroutine(choiceTimerCoroutine);
+            choiceTimerCoroutine = null;
+
+            Debug.Log("Timer stopped");
+        }
+
+        choiceTimerStarted = false;
+
+        player.SetInputEnabled(InputMode.DISABLED);
+
+        policeCallText.text = "Please tell us the identity of the murderer.";
+        policeCallText.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(1f);
+
+        button1.gameObject.SetActive(true);
+        button2.gameObject.SetActive(true);
+        button3.gameObject.SetActive(true);
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     private void Update()
     {
+        if (Input.GetKeyDown(callPoliceKey) && choiceTimerStarted)
+        {
+            StartCoroutine(CallPolice());
+        }
+
         ////////////////// DEBUG ///////////////////
         if (Input.GetKeyDown(KeyCode.B) &&
             currentDay == -1)
@@ -189,7 +271,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) &&
             currentDay == 1)
         {
-            StartCoroutine(GameOver());
+            StartCoroutine(GameOver("Game Over"));
         }
 
         if (Input.GetKeyDown(KeyCode.Y) &&
@@ -202,6 +284,12 @@ public class GameManager : MonoBehaviour
             currentDay == 1)
         {
             StartCoroutine(StartChoiceTimer());
+        }
+
+        if (Input.GetKeyDown(KeyCode.F) &&
+            currentDay == 1)
+        {
+            choiceTimerCoroutine = StartCoroutine(StartChoiceTimer());
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha0) &&
