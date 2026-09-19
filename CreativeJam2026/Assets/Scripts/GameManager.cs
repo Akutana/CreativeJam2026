@@ -19,22 +19,40 @@ public class GameManager : MonoBehaviour
     {
         currentDay = day;
 
-        yield return FadeTransition();
-
-        Debug.Log("Starting day" + day);
-    }
-
-    private IEnumerator FadeTransition()
-    {
         player.SetInputEnabled(false);
 
         yield return screenFader.FadeIn();
+
+        switch (day)
+        {
+            case 0:
+                yield return StartDay0();
+                break;
+
+            case 1:
+                yield return StartDay1();
+                break;
+        }
 
         yield return new WaitForSeconds(blackScreenDuration);
 
         yield return screenFader.FadeOut();
 
         player.SetInputEnabled(true);
+    }
+
+    private IEnumerator StartDay0()
+    {
+        Debug.Log("Starting day 0");
+
+        yield return null;
+    }
+
+    private IEnumerator StartDay1()
+    {
+        Debug.Log("Starting day 1");
+
+        yield return null;
     }
 
     private void Update()
