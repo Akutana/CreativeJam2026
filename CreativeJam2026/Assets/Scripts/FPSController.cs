@@ -4,6 +4,13 @@ using UnityEngine.InputSystem;
 using System.Collections;
 using UnityEditor.Rendering;
 
+public enum InputMode
+{
+    ENABLED,
+    NEXT_MESSAGE_ONLY,
+    DISABLED,
+}
+
 [RequireComponent(typeof(CharacterController))]
 public class FPSController : MonoBehaviour
 {
@@ -21,7 +28,7 @@ public class FPSController : MonoBehaviour
     float verticalVelocity;
     float cameraPitch;
 
-    private bool inputEnabled = true;
+    private InputMode inputMode;
     private bool displayingMessages = false;
 
     private Interactable interactable;
@@ -39,8 +46,18 @@ public class FPSController : MonoBehaviour
 
     void Update()
     {
-        if (!inputEnabled)
+        if (inputMode == InputMode.DISABLED)
             return;
+
+        if (inputMode == InputMode.NEXT_MESSAGE_ONLY)
+        {
+            if (Input.GetKeyDown(nextMessageKey) && displayingMessages)
+            {
+                CheckNextMessageKey();
+            }
+
+            return;
+        }
 
         // Movement
         Vector2 input = Keyboard.current != null
@@ -78,16 +95,16 @@ public class FPSController : MonoBehaviour
         }
 
         if (!displayingMessages)
+        {            
             CheckInteractionRaycast();
-        if (interactable && !displayingMessages)
-            CheckInteractionKey();
-        if (displayingMessages)
-            CheckNextMessageKey();
+            if (interactable)
+                CheckInteractionKey();
+        }
     }
 
-    public void SetInputEnabled(bool enabled)
+    public void SetInputEnabled(InputMode mode)
     {
-        inputEnabled = enabled;
+        inputMode = mode;
     }
 
     private void CheckInteractionRaycast()
@@ -136,6 +153,7 @@ public class FPSController : MonoBehaviour
 
                 nextMessageKey = KeyCode.None;
                 displayingMessages = false;
+                inputMode = InputMode.ENABLED;
             }
         }
     }
@@ -147,6 +165,7 @@ public class FPSController : MonoBehaviour
         currentMessageIndex = 0;
 
         displayingMessages = true;
+        inputMode = InputMode.NEXT_MESSAGE_ONLY;
 
         interactionPrompt.gameObject.SetActive(false);
         interactionMessage.gameObject.SetActive(true);

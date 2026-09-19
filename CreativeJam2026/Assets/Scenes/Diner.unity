@@ -1126,6 +1126,7 @@ MonoBehaviour:
   narrationText: {fileID: 933639035}
   blackScreenDuration: 2
   transitionDuration: 3
+  choiceTimerDuration: 60
 --- !u!4 &1609215958
 Transform:
   m_ObjectHideFlags: 0

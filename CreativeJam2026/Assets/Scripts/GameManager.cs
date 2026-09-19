@@ -12,7 +12,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float blackScreenDuration = 2f;
     [SerializeField] private float transitionDuration = 3f;
 
+    [SerializeField] private int choiceTimerDuration = 60;
+
     int currentDay = -1;
+
+    private Coroutine choiceTimerCoroutine;
 
     private void Start()
     {
@@ -26,7 +30,7 @@ public class GameManager : MonoBehaviour
     {
         currentDay = day;
 
-        player.SetInputEnabled(false);
+        player.SetInputEnabled(InputMode.DISABLED);
 
         yield return screenFader.FadeIn();
 
@@ -65,7 +69,7 @@ public class GameManager : MonoBehaviour
 
         yield return screenFader.FadeOut();
 
-        player.SetInputEnabled(true);
+        player.SetInputEnabled(InputMode.ENABLED);
     }
 
     private IEnumerator StartDay0()
@@ -91,7 +95,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Resetting day 1");
 
-        player.SetInputEnabled(false);
+        player.SetInputEnabled(InputMode.DISABLED);
 
         yield return screenFader.FadeIn();
 
@@ -121,14 +125,14 @@ public class GameManager : MonoBehaviour
 
         yield return screenFader.FadeOut();
 
-        player.SetInputEnabled(true);
+        player.SetInputEnabled(InputMode.ENABLED);
     }
 
     private IEnumerator Win()
     {
         Debug.Log("Win");
 
-        player.SetInputEnabled(false);
+        player.SetInputEnabled(InputMode.DISABLED);
 
         yield return screenFader.FadeIn();
 
@@ -157,7 +161,14 @@ public class GameManager : MonoBehaviour
         transitionText.text = "Imagine this is the main menu";
         transitionText.gameObject.SetActive(true);
 
-        player.SetInputEnabled(true);
+        player.SetInputEnabled(InputMode.ENABLED);
+    }
+
+    private IEnumerator StartChoiceTimer()
+    {
+        yield return new WaitForSeconds(choiceTimerDuration);
+
+        yield return GameOver();
     }
 
     private void Update()
@@ -185,6 +196,12 @@ public class GameManager : MonoBehaviour
             currentDay == 1)
         {
             StartCoroutine(Win());
+        }
+
+        if (Input.GetKeyDown(KeyCode.O) &&
+            currentDay == 1)
+        {
+            StartCoroutine(StartChoiceTimer());
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha0) &&
