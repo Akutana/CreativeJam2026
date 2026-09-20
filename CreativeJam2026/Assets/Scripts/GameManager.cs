@@ -3,8 +3,6 @@ using System.Collections;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Reflection;
-using Unity.ProjectAuditor.Editor.Core;
 
 public class GameManager : MonoBehaviour
 {
