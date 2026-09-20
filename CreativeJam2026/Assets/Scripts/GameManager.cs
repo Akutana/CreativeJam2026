@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private int choiceTimerDuration = 60;
 
+    [SerializeField] private float morningFadeDuration = 1f;
+
     [SerializeField] private Button button1;
     [SerializeField] private Button button2;
     [SerializeField] private Button button3;
@@ -91,12 +93,8 @@ public class GameManager : MonoBehaviour
             case 0:
                 yield return new WaitForSeconds(blackScreenDuration);
 
-                morningImage.gameObject.SetActive(true);
                 animator.Play("ZZZs sept 20");
-
-                yield return new WaitForSeconds(morningImageDuration);
-
-                morningImage.gameObject.SetActive(false);
+                yield return ShowMorning(morningImageDuration);
 
                 yield return StartDay0();
 
@@ -112,12 +110,8 @@ public class GameManager : MonoBehaviour
 
                 yield return new WaitForSeconds(blackScreenDuration);
 
-                morningImage.gameObject.SetActive(true);
-                animator.Play("ZZZs sept19");
-
-                yield return new WaitForSeconds(morningImageDuration);
-
-                morningImage.gameObject.SetActive(false);
+                animator.Play("ZZZs sept19"); 
+                yield return ShowMorning(morningImageDuration);
 
                 yield return new WaitForSeconds(1f);
 
@@ -188,6 +182,50 @@ public class GameManager : MonoBehaviour
         yield return null;
     }
 
+    private IEnumerator ShowMorning(float duration)
+    {
+        morningImage.gameObject.SetActive(true);
+
+        // Fade in
+        Color color = morningImage.color;
+        color.a = 0f;
+        morningImage.color = color;
+
+        float timer = 0f;
+
+        while (timer < morningFadeDuration)
+        {
+            timer += Time.deltaTime;
+            color.a = Mathf.Clamp01(timer / morningFadeDuration);
+            morningImage.color = color;
+
+            yield return null;
+        }
+
+        color.a = 1f;
+        morningImage.color = color;
+
+        // Image displayed
+        yield return new WaitForSeconds(duration);
+
+        // Fade out
+        timer = 0f;
+
+        while (timer < morningFadeDuration)
+        {
+            timer += Time.deltaTime;
+            color.a = 1f - Mathf.Clamp01(timer / morningFadeDuration);
+            morningImage.color = color;
+
+            yield return null;
+        }
+
+        color.a = 0f;
+        morningImage.color = color;
+
+        morningImage.gameObject.SetActive(false);
+    }
+
     private IEnumerator GameOver(string message)
     {
         Debug.Log("Resetting day 1");
@@ -213,12 +251,8 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(transitionDuration);
 
-        morningImage.gameObject.SetActive(true);
         animator.Play("ZZZs sept19");
-
-        yield return new WaitForSeconds(morningImageDuration);
-
-        morningImage.gameObject.SetActive(false);
+        yield return ShowMorning(morningImageDuration);
 
         yield return StartDay1();
 
