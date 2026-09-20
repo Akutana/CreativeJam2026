@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI policeCallPromptText;
     [SerializeField] private TextMeshProUGUI monologText;
     [SerializeField] private TextMeshProUGUI interactionMessage;
+    [SerializeField] private Image deathImage;
 
     [SerializeField] private Image morningImage;
     [SerializeField] private Animator animator;
@@ -62,6 +63,7 @@ public class GameManager : MonoBehaviour
         backToMenuButton.gameObject.SetActive(false);
 
         morningImage.gameObject.SetActive(false);
+        deathImage.gameObject.SetActive(false);
 
         yesterdayDiner.SetActive(false);
 
@@ -202,13 +204,15 @@ public class GameManager : MonoBehaviour
 
         // do reset stuff
 
-        yield return new WaitForSeconds(blackScreenDuration);
-
+        deathImage.gameObject.SetActive(true);
         narrationText.text = message;
         narrationText.gameObject.SetActive(true);
 
+        yield return new WaitForSeconds(blackScreenDuration);
+
         yield return new WaitForSeconds(transitionDuration);
 
+        deathImage.gameObject.SetActive(false);
         narrationText.gameObject.SetActive(false);
 
         yield return new WaitForSeconds(transitionDuration);
