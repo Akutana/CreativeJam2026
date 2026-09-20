@@ -545,7 +545,7 @@
     "m_ReceiveShadows": true,
     "m_DisableTint": false,
     "m_Sort3DAs2DCompatible": false,
-    "m_AdditionalMotionVectorMode": 0,
+    "m_AdditionalMotionVectorMode": 1,
     "m_AlembicMotionVectors": false,
     "m_SupportsLODCrossFade": false,
     "m_CustomEditorGUI": "",
@@ -1392,7 +1392,7 @@
     "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalUnlitSubTarget",
     "m_ObjectId": "45cfbf2435484980915d5714438b3772",
     "m_KeepLightingVariants": false,
-    "m_DefaultDecalBlending": true,
+    "m_DefaultDecalBlending": false,
     "m_DefaultSSAO": true
 }
 

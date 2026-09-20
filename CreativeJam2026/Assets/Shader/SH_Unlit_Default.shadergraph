@@ -716,7 +716,7 @@
     "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalUnlitSubTarget",
     "m_ObjectId": "f4f5e4a5a56248ab91d1d7fd726947f0",
     "m_KeepLightingVariants": false,
-    "m_DefaultDecalBlending": true,
+    "m_DefaultDecalBlending": false,
     "m_DefaultSSAO": true
 }
 
