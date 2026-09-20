@@ -4451,6 +4451,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF_SC_Diner
       objectReference: {fileID: 0}
+    - target: {fileID: 7212756054642338523, guid: d5b7e08ce436e2f4ab76d9c53cc6d282, type: 3}
+      propertyPath: interactionText
+      value: Fridge
+      objectReference: {fileID: 0}
     - target: {fileID: 7617308060678070935, guid: d5b7e08ce436e2f4ab76d9c53cc6d282, type: 3}
       propertyPath: m_LocalPosition.x
       value: 634.74304
