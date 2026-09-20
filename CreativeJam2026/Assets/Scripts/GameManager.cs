@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI countdownText;
     [SerializeField] private GameObject clock;
 
-    [SerializeField] private MusicJukebox jukebox;
+    [SerializeField] public MusicJukebox jukebox;
 
     bool countdownStopped = false;
 
@@ -309,6 +309,8 @@ public class GameManager : MonoBehaviour
         yield return screenFader.FadeIn();
 
         yield return new WaitForSeconds(transitionDuration);
+
+        StartCoroutine(jukebox.playWin());
 
         winImage.gameObject.SetActive(true);
         transitionText.text = "You found the murderer";

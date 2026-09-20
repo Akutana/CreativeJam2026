@@ -205,6 +205,9 @@ public class FPSController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("DeadAdrian"))
         {
+
+            StartCoroutine(gameManager.jukebox.playDeadMusic());
+
             gameManager.PlayerSeesDeadAdrian();
         }
     }

@@ -315,6 +315,8 @@ MonoBehaviour:
   recordSource: {fileID: 1696136670197815217}
   recordChangeSound: {fileID: 8300000, guid: 93d28b8319075ff42a5fde245e95c162, type: 3}
   gameOverMusic: {fileID: 8300000, guid: e69336b0f5ac7fa4e88e5f89501131e3, type: 3}
+  deadMusic: {fileID: 8300000, guid: 742f6bab5649114438b056fc0c7088f3, type: 3}
+  WinMusic: {fileID: 8300000, guid: e7ac069ca10013e47bb8ad12196c3e0b, type: 3}
   musicVolume: 0.65
   recordVolume: 0.1
   fadeOutDuration: 0.35

@@ -12,6 +12,8 @@ public class MusicJukebox : MonoBehaviour
     [SerializeField] private AudioSource recordSource;
     [SerializeField] private AudioClip recordChangeSound;
     [SerializeField] private AudioClip gameOverMusic;
+    [SerializeField] private AudioClip deadMusic;
+    [SerializeField] private AudioClip WinMusic;
 
     [Header("Volume")]
     [SerializeField, Range(0f, 1f)]
@@ -76,6 +78,79 @@ public class MusicJukebox : MonoBehaviour
 
     }
 
+    public IEnumerator playDeadMusic()
+    {
+
+        StopCoroutine(jukeboxRoutine);
+
+        yield return FadeVolume(
+            musicSource,
+            musicSource.volume,
+            0f,
+            fadeOutDuration
+        );
+
+        musicSource.Stop();
+
+        musicSource.clip = deadMusic;
+        musicSource.volume = 0f;
+        musicSource.Play();
+
+
+        yield return FadeVolume(
+        musicSource,
+        0f,
+        musicVolume,
+        fadeInDuration
+        );
+
+        float waitTime = deadMusic.length;
+
+        if (waitTime > 0f)
+            yield return new WaitForSeconds(waitTime);
+
+        JukeboxLoop();
+
+    }
+
+
+    public IEnumerator playWin()
+    {
+
+        StopCoroutine(jukeboxRoutine);
+
+        yield return FadeVolume(
+            musicSource,
+            musicSource.volume,
+            0f,
+            fadeOutDuration
+        );
+
+        musicSource.Stop();
+
+        musicSource.clip = WinMusic;
+        musicSource.volume = 0f;
+        musicSource.Play();
+
+
+        yield return FadeVolume(
+        musicSource,
+        0f,
+        musicVolume,
+        fadeInDuration
+        );
+
+        float waitTime = WinMusic.length;
+
+        if (waitTime > 0f)
+            yield return new WaitForSeconds(waitTime);
+
+        JukeboxLoop();
+
+    }
+
+
+
     private void SetupSources()
     {
         if (musicSource == null)
@@ -101,6 +176,28 @@ public class MusicJukebox : MonoBehaviour
             recordSource.playOnAwake = false;
             recordSource.volume = musicVolume;
         }
+
+
+        if (WinMusic != null)
+        {
+            recordSource.loop = false;
+            recordSource.playOnAwake = false;
+            recordSource.volume = musicVolume;
+        }
+
+
+        if (deadMusic != null)
+        {
+            recordSource.loop = false;
+            recordSource.playOnAwake = false;
+            recordSource.volume = musicVolume;
+        }
+
+
+
+
+
+
     }
 
     private IEnumerator JukeboxLoop()
