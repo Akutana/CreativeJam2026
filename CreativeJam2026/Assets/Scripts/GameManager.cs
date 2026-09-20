@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI monologText;
     [SerializeField] private TextMeshProUGUI interactionMessage;
     [SerializeField] private Image dialogueBox;
+    [SerializeField] private Image monologBox;
     [SerializeField] private Image deathImage;
     [SerializeField] private Image winImage;
 
@@ -58,6 +59,7 @@ public class GameManager : MonoBehaviour
         policeCallText.gameObject.SetActive(false);
         policeCallPromptText.gameObject.SetActive(false);
         monologText.gameObject.SetActive(false);
+        monologBox.gameObject.SetActive(false);
         dialogueBox.gameObject.SetActive(false);
 
         button1.gameObject.SetActive(false);
@@ -149,12 +151,14 @@ public class GameManager : MonoBehaviour
 
                 player.SetInputEnabled(InputMode.NEXT_MESSAGE_ONLY);
 
+                monologBox.gameObject.SetActive(true);
                 monologText.text = "I can’t believe my eyes, my boss is here. Was what happened yesterday a dream? Or have I been given a chance to make it right? Maybe I should figure out if I can prevent it.";
                 monologText.gameObject.SetActive(true);
 
                 yield return new WaitForSeconds(narrationDuration);
 
                 monologText.gameObject.SetActive(false);
+                monologBox.gameObject.SetActive(false);
 
                 yield return StartDay1();
 
