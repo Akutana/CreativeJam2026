@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Reflection;
+using Unity.ProjectAuditor.Editor.Core;
 
 public class GameManager : MonoBehaviour
 {
@@ -46,6 +47,11 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject yesterdayDiner;
 
+    [SerializeField] private TextMeshProUGUI countdownText;
+    [SerializeField] private GameObject clock;
+
+    bool countdownStopped = false;
+
     int currentDay = -1;
 
     private Coroutine choiceTimerCoroutine;
@@ -70,6 +76,9 @@ public class GameManager : MonoBehaviour
         winImage.gameObject.SetActive(false);
 
         yesterdayDiner.SetActive(false);
+
+        countdownText.gameObject.SetActive(false);
+        clock.SetActive(false);
 
         foreach (GameObject character in characters)
         {
@@ -185,6 +194,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Starting day 1");
 
         choiceTimerCoroutine = StartCoroutine(StartChoiceTimer());
+        StartCoroutine(Countdown(choiceTimerDuration));
 
         foreach (GameObject collider in collidersAdrian)
         {
@@ -250,11 +260,11 @@ public class GameManager : MonoBehaviour
 
         yield return screenFader.FadeIn();
 
-        // do reset stuff
-
         deathImage.gameObject.SetActive(true);
         narrationText.text = message;
         narrationText.gameObject.SetActive(true);
+
+        countdownStopped = false;
 
         yield return new WaitForSeconds(blackScreenDuration);
 
@@ -371,6 +381,7 @@ public class GameManager : MonoBehaviour
         if (choiceTimerCoroutine != null)
         {
             StopCoroutine(choiceTimerCoroutine);
+            countdownStopped = true;
             choiceTimerCoroutine = null;
 
             Debug.Log("Timer stopped");
@@ -406,6 +417,30 @@ public class GameManager : MonoBehaviour
     public int GetCurrentDay()
     {
         return currentDay;
+    }
+
+    private IEnumerator Countdown(float duration)
+    {
+        Debug.Log("countdown");
+
+        countdownText.gameObject.SetActive(true);
+        clock.SetActive(true);
+
+        float remaining = duration;
+
+        while (remaining > 0f && !countdownStopped)
+        {
+            countdownText.text = Mathf.CeilToInt(remaining).ToString();
+            Debug.Log(countdownText.text);
+
+            remaining -= Time.deltaTime;
+            yield return null;
+        }
+
+        countdownText.text = "";
+
+        countdownText.gameObject.SetActive(false);
+        clock.SetActive(false);
     }
 
     private void Update()
