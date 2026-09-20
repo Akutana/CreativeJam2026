@@ -63,5 +63,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 57e00f45fa119904d865ebe75a05ac37, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6552807557314748489}
   m_SourcePrefab: {fileID: 100100000, guid: 57e00f45fa119904d865ebe75a05ac37, type: 3}
+--- !u!1 &242144799155335034 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 57e00f45fa119904d865ebe75a05ac37, type: 3}
+  m_PrefabInstance: {fileID: 1125104653211636267}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-6552807557314748489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242144799155335034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1fd8fcbf14f4e2428bb1da066f523e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  interactionText: Fridge
+  interactionMessage:
+  - Contains eggs, bacon, milk, ice cream, and basically all the goods the diner might need.
+  interactionKey: 101
+  nextMessageKey: 32

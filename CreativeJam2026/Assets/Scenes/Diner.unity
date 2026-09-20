@@ -256,6 +256,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4153684}
   m_CullTransparentMesh: 1
+--- !u!1 &22023702 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6324873505985961530, guid: d5b7e08ce436e2f4ab76d9c53cc6d282, type: 3}
+  m_PrefabInstance: {fileID: 1775048107}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &22023707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22023702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1fd8fcbf14f4e2428bb1da066f523e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  interactionText: Notebook
+  interactionMessage:
+  - "In this diary there are many frazzled entries about the future of the diner. Somehow Adrian\u2019s name shows up in past tense\u2026"
+  interactionKey: 101
+  nextMessageKey: 32
 --- !u!1001 &52554582
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2052,6 +2074,71 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &839810532 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8237722888280589450, guid: d5b7e08ce436e2f4ab76d9c53cc6d282, type: 3}
+  m_PrefabInstance: {fileID: 1775048107}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &839810537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839810532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1fd8fcbf14f4e2428bb1da066f523e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  interactionText: Hair tie
+  interactionMessage:
+  - "Sophie\u2019s hair tie. But she never lets her hair down while at work\u2026?"
+  interactionKey: 101
+  nextMessageKey: 32
+--- !u!135 &839810538
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839810532}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.072021484
+  m_Center: {x: 0, y: -0.000000014901161, z: 0.0031738281}
+--- !u!1 &895084029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 161827993675807290, guid: d5b7e08ce436e2f4ab76d9c53cc6d282, type: 3}
+  m_PrefabInstance: {fileID: 1775048107}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &895084034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895084029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1fd8fcbf14f4e2428bb1da066f523e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  interactionText: Knife
+  interactionMessage:
+  - "This seems to be Kevin\u2019s favorite knife. But why did he put it here?"
+  interactionKey: 101
+  nextMessageKey: 32
 --- !u!1 &933639033
 GameObject:
   m_ObjectHideFlags: 0
@@ -3063,6 +3150,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1380851780 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6358972686320196393, guid: d5b7e08ce436e2f4ab76d9c53cc6d282, type: 3}
+  m_PrefabInstance: {fileID: 1775048107}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1380851785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380851780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1fd8fcbf14f4e2428bb1da066f523e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  interactionText: Receipt
+  interactionMessage:
+  - "James seems to have left a note on the receipt for Sophie. It reads: \u201CYou deserve better than him\u201D with a heart."
+  interactionKey: 101
+  nextMessageKey: 32
 --- !u!1 &1419484455
 GameObject:
   m_ObjectHideFlags: 0
@@ -3405,7 +3514,10 @@ MonoBehaviour:
   - {fileID: 362283026}
   - {fileID: 52554583}
   - {fileID: 2108396784}
-  button: {fileID: 1900481466}
+  clues:
+  - {fileID: 22023702}
+  - {fileID: 1380851780}
+  - {fileID: 895084029}
   deadAdrian: {fileID: 233719441}
   collidersAdrian:
   - {fileID: 2136772517}
@@ -3892,7 +4004,22 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 4674515028258287991, guid: d5b7e08ce436e2f4ab76d9c53cc6d282, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8237722888280589450, guid: d5b7e08ce436e2f4ab76d9c53cc6d282, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 839810537}
+    - targetCorrespondingSourceObject: {fileID: 8237722888280589450, guid: d5b7e08ce436e2f4ab76d9c53cc6d282, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 839810538}
+    - targetCorrespondingSourceObject: {fileID: 6358972686320196393, guid: d5b7e08ce436e2f4ab76d9c53cc6d282, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1380851785}
+    - targetCorrespondingSourceObject: {fileID: 6324873505985961530, guid: d5b7e08ce436e2f4ab76d9c53cc6d282, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 22023707}
+    - targetCorrespondingSourceObject: {fileID: 161827993675807290, guid: d5b7e08ce436e2f4ab76d9c53cc6d282, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 895084034}
   m_SourcePrefab: {fileID: 100100000, guid: d5b7e08ce436e2f4ab76d9c53cc6d282, type: 3}
 --- !u!1 &1818281631
 GameObject:
@@ -4045,6 +4172,44 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7421393589700926525, guid: 6df6a7778e3bf7e48b7b6238f85c1c76, type: 3}
   m_PrefabInstance: {fileID: 336480822741647159}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1900481471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900481466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1fd8fcbf14f4e2428bb1da066f523e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  interactionText: Button
+  interactionMessage:
+  - Hm, I remember seeing someone wearing red buttons like these.
+  interactionKey: 101
+  nextMessageKey: 32
+--- !u!135 &1900481472
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900481466}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.11010742
+  m_Center: {x: 0.019185385, y: 0.0022913418, z: 0.008951823}
 --- !u!1 &2102984481
 GameObject:
   m_ObjectHideFlags: 0
@@ -4636,7 +4801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7905443020530271879, guid: 6df6a7778e3bf7e48b7b6238f85c1c76, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 629.957
+      value: 629.821
       objectReference: {fileID: 0}
     - target: {fileID: 7905443020530271879, guid: 6df6a7778e3bf7e48b7b6238f85c1c76, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4644,7 +4809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7905443020530271879, guid: 6df6a7778e3bf7e48b7b6238f85c1c76, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2351.234
+      value: 2351.218
       objectReference: {fileID: 0}
     - target: {fileID: 7905443020530271879, guid: 6df6a7778e3bf7e48b7b6238f85c1c76, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4677,7 +4842,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7421393589700926525, guid: 6df6a7778e3bf7e48b7b6238f85c1c76, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1900481471}
+    - targetCorrespondingSourceObject: {fileID: 7421393589700926525, guid: 6df6a7778e3bf7e48b7b6238f85c1c76, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1900481472}
   m_SourcePrefab: {fileID: 100100000, guid: 6df6a7778e3bf7e48b7b6238f85c1c76, type: 3}
 --- !u!1001 &7662073651668274476
 PrefabInstance:

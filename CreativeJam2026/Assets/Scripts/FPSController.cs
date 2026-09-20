@@ -18,7 +18,7 @@ public class FPSController : MonoBehaviour
     [SerializeField] Transform cameraTransform;
 
     [Header("Interaction settings")]
-    [SerializeField] private float interactionDistance = 3f;
+    [SerializeField] private float interactionDistance = 5f;
     [SerializeField] private TextMeshProUGUI interactionPrompt;
     [SerializeField] private TextMeshProUGUI interactionMessage;
     [SerializeField] private GameManager gameManager;
@@ -154,7 +154,8 @@ public class FPSController : MonoBehaviour
                 interactionMessage.text = "";
                 interactionMessage.gameObject.SetActive(false);
 
-                gameManager.SetPoliceCallPromptActive(true);
+                if (gameManager.GetCurrentDay() == 1)
+                    gameManager.SetPoliceCallPromptActive(true);
 
                 nextMessageKey = KeyCode.None;
                 displayingMessages = false;

@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private KeyCode callPoliceKey;
 
     [SerializeField] private GameObject[] characters;
-    [SerializeField] private GameObject button;
+    [SerializeField] private GameObject[] clues;
     [SerializeField] private GameObject deadAdrian;
 
     [SerializeField] private GameObject[] collidersAdrian;
@@ -76,7 +76,8 @@ public class GameManager : MonoBehaviour
             character.SetActive(false);
         }
 
-        button.SetActive(false);
+        foreach (GameObject clue in clues)
+            clue.SetActive(false);
 
         deadAdrian.gameObject.SetActive(true);
 
@@ -100,6 +101,9 @@ public class GameManager : MonoBehaviour
                 animator.gameObject.SetActive(true);
                 animator.Play("ZZZs sept 20");
                 yield return ShowMorning(morningImageDuration);
+
+                foreach (GameObject clue in clues)
+                    clue.SetActive(false);
 
                 yield return StartDay0();
 
@@ -136,7 +140,8 @@ public class GameManager : MonoBehaviour
                 }
 
                 yesterdayDiner.SetActive(true);
-                button.SetActive(true);
+                foreach (GameObject clue in clues)
+                    clue.SetActive(true);
 
                 player.ResetPlayerPosition();
 
@@ -396,6 +401,11 @@ public class GameManager : MonoBehaviour
     public void SetPoliceCallPromptActive(bool active)
     {
         policeCallPromptText.gameObject.SetActive(active);
+    }
+
+    public int GetCurrentDay()
+    {
+        return currentDay;
     }
 
     private void Update()
