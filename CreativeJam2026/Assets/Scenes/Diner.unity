@@ -2404,15 +2404,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8518692824647957591, guid: b8425573ea0c2c146a51f75e7ecf129c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1760.406
+      value: 620.786
       objectReference: {fileID: 0}
     - target: {fileID: 8518692824647957591, guid: b8425573ea0c2c146a51f75e7ecf129c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.000001938026
+      value: 0.31
       objectReference: {fileID: 0}
     - target: {fileID: 8518692824647957591, guid: b8425573ea0c2c146a51f75e7ecf129c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2771.1057
+      value: 2356.163
       objectReference: {fileID: 0}
     - target: {fileID: 8518692824647957591, guid: b8425573ea0c2c146a51f75e7ecf129c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2467,10 +2467,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fd8fcbf14f4e2428bb1da066f523e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  interactionText: Interact with knife
+  interactionText: Examine
   interactionMessage:
-  - Test1
-  - Test2
+  - "This seems to be Kevin\u2019s favorite knife."
   interactionKey: 101
   nextMessageKey: 32
 --- !u!1 &1419484455
