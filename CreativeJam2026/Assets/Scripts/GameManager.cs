@@ -319,7 +319,9 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(transitionDuration);
 
-        narrationText.text = "Explain that everything goes back to normal";
+
+        winImage.gameObject.SetActive(false);
+        narrationText.text = "After your call to the police, they found evidence of Kevin’s detailed plans to murder the head chef. Luckily you were there to prevent it. The next day comes by and you proudly go to work in your new sous chef hat.";
         narrationText.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(narrationDuration);
@@ -452,54 +454,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(callPoliceKey) && choiceTimerStarted)
         {
-            CallPolice() ;
+            CallPolice();
         }
-
-        ////////////////// DEBUG ///////////////////
-        if (Input.GetKeyDown(KeyCode.N) &&
-            currentDay == 0)
-        {
-            StartCoroutine(StartDay(1, true, true));
-        }
-
-        if (Input.GetKeyDown(KeyCode.R) &&
-            currentDay == 1)
-        {
-            StartCoroutine(GameOver("Game Over"));
-        }
-
-        if (Input.GetKeyDown(KeyCode.Y) &&
-            currentDay == 1)
-        {
-            StartCoroutine(Win());
-        }
-
-
-        if (Input.GetKeyDown(KeyCode.O) &&
-            currentDay == 1)
-        {
-            StartCoroutine(StartChoiceTimer());
-        }
-
-        if (Input.GetKeyDown(KeyCode.F) &&
-            currentDay == 1)
-        {
-            choiceTimerCoroutine = StartCoroutine(StartChoiceTimer());
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha0) &&
-            currentDay != 0)
-        {
-            currentDay = 0;
-            Debug.Log("DEBUG - switching to day 0");
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha1) &&
-            currentDay != 1)
-        {
-            currentDay = 1;
-            Debug.Log("DEBUG - switching to day 1");
-        }
-        ////////////////////////////////////////////
     }
 }
