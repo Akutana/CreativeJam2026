@@ -3,6 +3,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine.UI;
 using UnityEditor.Build.Content;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Button button1;
     [SerializeField] private Button button2;
     [SerializeField] private Button button3;
+    [SerializeField] private Button backToMenuButton;
 
     [SerializeField] private KeyCode callPoliceKey;
 
@@ -56,6 +58,7 @@ public class GameManager : MonoBehaviour
         button1.gameObject.SetActive(false);
         button2.gameObject.SetActive(false);
         button3.gameObject.SetActive(false);
+        backToMenuButton.gameObject.SetActive(false);
 
         morningImage.gameObject.SetActive(false);
 
@@ -133,7 +136,7 @@ public class GameManager : MonoBehaviour
 
                 player.SetInputEnabled(InputMode.NEXT_MESSAGE_ONLY);
 
-                monologText.text = "Coming into work: I can’t believe my eyes, my boss is here. Was what happened yesterday a dream? Or have I been given a chance to make it right? Maybe I should figure out if I can prevent it.";
+                monologText.text = "I can’t believe my eyes, my boss is here. Was what happened yesterday a dream? Or have I been given a chance to make it right? Maybe I should figure out if I can prevent it.";
                 monologText.gameObject.SetActive(true);
 
                 yield return new WaitForSeconds(narrationDuration);
@@ -234,21 +237,36 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(transitionDuration);
 
-        transitionText.text = "Day 2";
-        transitionText.gameObject.SetActive(true);
+        narrationText.text = "Explain that everything goes back to normal";
+        narrationText.gameObject.SetActive(true);
 
-        yield return new WaitForSeconds(transitionDuration);
+        yield return new WaitForSeconds(narrationDuration);
 
-        transitionText.gameObject.SetActive(false);
+        backToMenuButton.gameObject.SetActive(true);
 
-        yield return new WaitForSeconds(blackScreenDuration);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
-        yield return screenFader.FadeOut();
+        //transitionText.text = "Day 2";
+        //transitionText.gameObject.SetActive(true);
 
-        transitionText.text = "Imagine this is the main menu";
-        transitionText.gameObject.SetActive(true);
+        //yield return new WaitForSeconds(transitionDuration);
 
-        player.SetInputEnabled(InputMode.ENABLED);
+        //transitionText.gameObject.SetActive(false);
+
+        //yield return new WaitForSeconds(blackScreenDuration);
+
+        //yield return screenFader.FadeOut();
+
+        //transitionText.text = "Imagine this is the main menu";
+        //transitionText.gameObject.SetActive(true);
+
+        //player.SetInputEnabled(InputMode.ENABLED);
+    }
+
+    public void GoBackToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     private IEnumerator StartChoiceTimer()
