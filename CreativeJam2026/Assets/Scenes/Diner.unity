@@ -2890,7 +2890,7 @@ MonoBehaviour:
   morningImage: {fileID: 682760248}
   blackScreenDuration: 1
   transitionDuration: 1
-  narrationDuration: 4
+  narrationDuration: 5
   choiceTimerDuration: 60
   button1: {fileID: 1107622827}
   button2: {fileID: 137294047}

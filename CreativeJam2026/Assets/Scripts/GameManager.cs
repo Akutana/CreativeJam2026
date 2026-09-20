@@ -113,6 +113,15 @@ public class GameManager : MonoBehaviour
 
                 morningImage.gameObject.SetActive(false);
 
+                yield return new WaitForSeconds(1f);
+
+                narrationText.text = "I don’t understand. Did my alarm clock malfunction? I could have sworn that today was the 21st. I can’t believe the sous-chef told us to come in even though our head chef was just murdered.";
+                narrationText.gameObject.SetActive(true);
+
+                yield return new WaitForSeconds(narrationDuration);
+
+                narrationText.gameObject.SetActive(false);
+
                 deadAdrian.gameObject.SetActive(false);
 
                 foreach (GameObject character in characters)
