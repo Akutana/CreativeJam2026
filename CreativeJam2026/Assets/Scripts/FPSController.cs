@@ -25,6 +25,8 @@ public class FPSController : MonoBehaviour
 
     [SerializeField] private GameObject playerPositionReset;
 
+    [SerializeField] private Camera playerCamera;
+
     CharacterController controller;
     float verticalVelocity;
     float cameraPitch;
@@ -183,8 +185,8 @@ public class FPSController : MonoBehaviour
     {
         transform.position = new Vector3(playerPositionReset.transform.position.x, transform.position.y, playerPositionReset.transform.position.z);
 
-        cameraPitch = 0f;
-        cameraTransform.localRotation = Quaternion.identity;
+        transform.rotation = Quaternion.Euler(0f, -90f, 0f);
+        playerCamera.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
     }
 
     private void OnTriggerEnter(Collider other)
