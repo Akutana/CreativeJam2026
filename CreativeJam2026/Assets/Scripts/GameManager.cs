@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private KeyCode callPoliceKey;
 
     [SerializeField] private GameObject[] characters;
-    [SerializeField] private GameObject knife;
+    [SerializeField] private GameObject button;
     [SerializeField] private GameObject deadAdrian;
 
     [SerializeField] private GameObject[] collidersAdrian;
@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
             character.SetActive(false);
         }
 
-        knife.SetActive(false);
+        button.SetActive(false);
 
         deadAdrian.gameObject.SetActive(true);
 
@@ -93,6 +93,7 @@ public class GameManager : MonoBehaviour
             case 0:
                 yield return new WaitForSeconds(blackScreenDuration);
 
+                animator.gameObject.SetActive(true);
                 animator.Play("ZZZs sept 20");
                 yield return ShowMorning(morningImageDuration);
 
@@ -110,6 +111,7 @@ public class GameManager : MonoBehaviour
 
                 yield return new WaitForSeconds(blackScreenDuration);
 
+                animator.gameObject.SetActive(true);
                 animator.Play("ZZZs sept19"); 
                 yield return ShowMorning(morningImageDuration);
 
@@ -130,6 +132,7 @@ public class GameManager : MonoBehaviour
                 }
 
                 yesterdayDiner.SetActive(true);
+                button.SetActive(true);
 
                 player.ResetPlayerPosition();
 
@@ -251,16 +254,18 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(transitionDuration);
 
+        animator.gameObject.SetActive(true);
         animator.Play("ZZZs sept19");
         yield return ShowMorning(morningImageDuration);
 
-        yield return StartDay1();
 
         yield return new WaitForSeconds(blackScreenDuration);
 
         player.ResetPlayerPosition();
 
         yield return screenFader.FadeOut();
+
+        yield return StartDay1();
 
         player.SetInputEnabled(InputMode.ENABLED);
     }
