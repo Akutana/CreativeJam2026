@@ -3139,9 +3139,8 @@ MonoBehaviour:
   policeCallPromptText: {fileID: 1098315086}
   monologText: {fileID: 1748578167}
   interactionMessage: {fileID: 403576002}
-  morning20: {fileID: 6183243896151741261, guid: b5e5edafffb54f5478dbdb2b389e62e4, type: 3}
-  morning19: {fileID: 9091922578302263084, guid: 1cc09f9a1f4fb9b4ab2b10b75e0ad56b, type: 3}
   morningImage: {fileID: 682760248}
+  animator: {fileID: 682760250}
   blackScreenDuration: 1
   transitionDuration: 1
   narrationDuration: 5
