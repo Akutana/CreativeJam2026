@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 using UnityEditor.Rendering;
+using Unity.VisualScripting;
 
 public enum InputMode
 {
@@ -23,6 +24,7 @@ public class FPSController : MonoBehaviour
     [SerializeField] private float interactionDistance = 3f;
     [SerializeField] private TextMeshProUGUI interactionPrompt;
     [SerializeField] private TextMeshProUGUI interactionMessage;
+    [SerializeField] private GameManager gameManager;
 
     CharacterController controller;
     float verticalVelocity;
@@ -151,6 +153,8 @@ public class FPSController : MonoBehaviour
                 interactionMessage.text = "";
                 interactionMessage.gameObject.SetActive(false);
 
+                gameManager.SetPoliceCallPromptActive(true);
+
                 nextMessageKey = KeyCode.None;
                 displayingMessages = false;
                 inputMode = InputMode.ENABLED;
@@ -167,10 +171,20 @@ public class FPSController : MonoBehaviour
         displayingMessages = true;
         inputMode = InputMode.NEXT_MESSAGE_ONLY;
 
+        gameManager.SetPoliceCallPromptActive(false);
+
         interactionPrompt.gameObject.SetActive(false);
         interactionMessage.gameObject.SetActive(true);
 
         if (messages.Length > 0)
             interactionMessage.text = messages[currentMessageIndex];
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("DeadAdrian"))
+        {
+            gameManager.PlayerSeesDeadAdrian();
+        }
     }
 }

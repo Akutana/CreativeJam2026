@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using TMPro;
 using UnityEngine.UI;
+using UnityEditor.Build.Content;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,9 +12,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI narrationText;
     [SerializeField] private TextMeshProUGUI policeCallText;
     [SerializeField] private TextMeshProUGUI policeCallPromptText;
+    [SerializeField] private TextMeshProUGUI monologText;
+    [SerializeField] private TextMeshProUGUI interactionMessage;
 
     [SerializeField] private float blackScreenDuration = 2f;
     [SerializeField] private float transitionDuration = 3f;
+    [SerializeField] private float narrationDuration = 4f;
 
     [SerializeField] private int choiceTimerDuration = 60;
 
@@ -22,6 +26,20 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Button button3;
 
     [SerializeField] private KeyCode callPoliceKey;
+
+    //[SerializeField] private GameObject charAdrian;
+    //[SerializeField] private GameObject charKevin;
+    //[SerializeField] private GameObject charSophie;
+    //[SerializeField] private GameObject charJames;
+    //[SerializeField] private GameObject charAndy;
+    //[SerializeField] private GameObject charJune;
+    //[SerializeField] private GameObject charMartha;
+
+    [SerializeField] private GameObject[] characters;
+    [SerializeField] private GameObject knife;
+    [SerializeField] private GameObject deadAdrian;
+
+    [SerializeField] private GameObject[] collidersAdrian;
 
     int currentDay = -1;
 
@@ -35,17 +53,25 @@ public class GameManager : MonoBehaviour
         narrationText.gameObject.SetActive(false);
         policeCallText.gameObject.SetActive(false);
         policeCallPromptText.gameObject.SetActive(false);
+        monologText.gameObject.SetActive(false);
 
         button1.gameObject.SetActive(false);
         button2.gameObject.SetActive(false);
         button3.gameObject.SetActive(false);
 
-        //screenFader.SetClear();
+        foreach (GameObject character in characters)
+        {
+            character.SetActive(false);
+        }
 
-        StartCoroutine(StartDay(0, false));
+        knife.SetActive(false);
+
+        deadAdrian.gameObject.SetActive(true);
+
+        StartCoroutine(StartDay(0, false, true));
     }
 
-    private IEnumerator StartDay(int day, bool fadeIn)
+    private IEnumerator StartDay(int day, bool fadeIn, bool fadeOut)
     {
         currentDay = day;
 
@@ -71,6 +97,13 @@ public class GameManager : MonoBehaviour
                 break;
 
             case 1:
+                narrationText.text = "Today, the owner of the diner that I work at was murdered. Everyone was dismissed early to allow the investigation to take its course. I can’t help but feel that something is wrong with the police’s suspicions.";
+                narrationText.gameObject.SetActive(true);
+
+                yield return new WaitForSeconds(narrationDuration);
+
+                narrationText.gameObject.SetActive(false);
+
                 yield return new WaitForSeconds(blackScreenDuration);
 
                 transitionText.text = "Day 1";
@@ -80,14 +113,35 @@ public class GameManager : MonoBehaviour
 
                 transitionText.gameObject.SetActive(false);
 
+                deadAdrian.gameObject.SetActive(false);
+
+                foreach (GameObject character in characters)
+                {
+                    character.gameObject.SetActive(true);
+                }
+
+                yield return screenFader.FadeOut();
+
+                player.SetInputEnabled(InputMode.NEXT_MESSAGE_ONLY);
+
+                monologText.text = "Coming into work: I can’t believe my eyes, my boss is here. Was what happened yesterday a dream? Or have I been given a chance to make it right? Maybe I should figure out if I can prevent it.";
+                monologText.gameObject.SetActive(true);
+
+                yield return new WaitForSeconds(narrationDuration);
+
+                monologText.gameObject.SetActive(false);
+
                 yield return StartDay1();
 
                 break;
         }
 
-        yield return new WaitForSeconds(blackScreenDuration);
+        if (fadeOut)
+        {        
+            yield return new WaitForSeconds(blackScreenDuration);
 
-        yield return screenFader.FadeOut();
+            yield return screenFader.FadeOut();
+        }
 
         player.SetInputEnabled(InputMode.ENABLED);
     }
@@ -105,8 +159,12 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Starting day 1");
 
-        // time loop day
-        // the player tries to find the murderer
+        choiceTimerCoroutine = StartCoroutine(StartChoiceTimer());
+
+        foreach (GameObject collider in collidersAdrian)
+        {
+            collider.gameObject.SetActive(false);
+        }
 
         yield return null;
     }
@@ -188,6 +246,8 @@ public class GameManager : MonoBehaviour
     {
         choiceTimerStarted = true;
 
+        yield return new WaitForSeconds(1f);
+
         policeCallPromptText.text = "Press [" + callPoliceKey + "] to call the police";
         policeCallPromptText.gameObject.SetActive(true);
 
@@ -222,7 +282,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(GameOver("The killer saw you accusing other suspects. He killed you."));
     }
 
-    private IEnumerator CallPolice()
+    private void CallPolice()
     {
         policeCallPromptText.gameObject.SetActive(false);
 
@@ -241,8 +301,6 @@ public class GameManager : MonoBehaviour
         policeCallText.text = "Please tell us the identity of the murderer.";
         policeCallText.gameObject.SetActive(true);
 
-        yield return new WaitForSeconds(1f);
-
         button1.gameObject.SetActive(true);
         button2.gameObject.SetActive(true);
         button3.gameObject.SetActive(true);
@@ -251,11 +309,21 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
     }
 
+    public void PlayerSeesDeadAdrian()
+    {
+        StartCoroutine(StartDay(1, true, false));
+    }
+
+    public void SetPoliceCallPromptActive(bool active)
+    {
+        policeCallPromptText.gameObject.SetActive(active);
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(callPoliceKey) && choiceTimerStarted)
         {
-            StartCoroutine(CallPolice());
+            CallPolice() ;
         }
 
         ////////////////// DEBUG ///////////////////
@@ -268,7 +336,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.N) &&
             currentDay == 0)
         {
-            StartCoroutine(StartDay(1, true));
+            StartCoroutine(StartDay(1, true, true));
         }
 
         if (Input.GetKeyDown(KeyCode.R) &&
@@ -282,6 +350,7 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(Win());
         }
+
 
         if (Input.GetKeyDown(KeyCode.O) &&
             currentDay == 1)
