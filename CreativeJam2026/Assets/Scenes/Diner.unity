@@ -277,7 +277,7 @@ MonoBehaviour:
   interactionMessage:
   - "In this diary there are many frazzled entries about the future of the diner. Somehow Adrian\u2019s name shows up in past tense\u2026"
   interactionKey: 101
-  nextMessageKey: 32
+  nextMessageKey: 101
 --- !u!1001 &52554582
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2315,7 +2315,7 @@ MonoBehaviour:
   interactionMessage:
   - "Sophie\u2019s hair tie. But she never lets her hair down while at work\u2026?"
   interactionKey: 101
-  nextMessageKey: 32
+  nextMessageKey: 101
 --- !u!135 &839810538
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2358,7 +2358,7 @@ MonoBehaviour:
   interactionMessage:
   - "This seems to be Kevin\u2019s favorite knife. But why did he put it here?"
   interactionKey: 101
-  nextMessageKey: 32
+  nextMessageKey: 101
 --- !u!1 &933639033
 GameObject:
   m_ObjectHideFlags: 0
@@ -3391,7 +3391,7 @@ MonoBehaviour:
   interactionMessage:
   - "James seems to have left a note on the receipt for Sophie. It reads: \u201CYou deserve better than him\u201D with a heart."
   interactionKey: 101
-  nextMessageKey: 32
+  nextMessageKey: 101
 --- !u!1 &1419484455
 GameObject:
   m_ObjectHideFlags: 0
@@ -4412,7 +4412,7 @@ MonoBehaviour:
   interactionMessage:
   - Hm, I remember seeing someone wearing red buttons like these.
   interactionKey: 101
-  nextMessageKey: 32
+  nextMessageKey: 101
 --- !u!135 &1900481472
 SphereCollider:
   m_ObjectHideFlags: 0

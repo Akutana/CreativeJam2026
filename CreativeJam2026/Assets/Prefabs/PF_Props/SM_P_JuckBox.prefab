@@ -188,7 +188,7 @@ MonoBehaviour:
   recordVolume: 0.1
   fadeOutDuration: 0.35
   fadeInDuration: 0.35
-  recordChangeDelay: 0.15
+  recordChangeDelay: 0.25
 --- !u!1 &6085983157894200058
 GameObject:
   m_ObjectHideFlags: 0
