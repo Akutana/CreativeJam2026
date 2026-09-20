@@ -3238,6 +3238,7 @@ MonoBehaviour:
   monologText: {fileID: 1748578167}
   interactionMessage: {fileID: 403576002}
   deathImage: {fileID: 555799680}
+  winImage: {fileID: 1301813611}
   morningImage: {fileID: 682760248}
   animator: {fileID: 682760250}
   blackScreenDuration: 1
