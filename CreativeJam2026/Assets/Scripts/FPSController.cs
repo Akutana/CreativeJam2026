@@ -23,6 +23,8 @@ public class FPSController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI interactionMessage;
     [SerializeField] private GameManager gameManager;
 
+    [SerializeField] private GameObject playerPositionReset;
+
     CharacterController controller;
     float verticalVelocity;
     float cameraPitch;
@@ -175,6 +177,14 @@ public class FPSController : MonoBehaviour
 
         if (messages.Length > 0)
             interactionMessage.text = messages[currentMessageIndex];
+    }
+
+    public void ResetPlayerPosition()
+    {
+        transform.position = new Vector3(playerPositionReset.transform.position.x, transform.position.y, playerPositionReset.transform.position.z);
+
+        cameraPitch = 0f;
+        cameraTransform.localRotation = Quaternion.identity;
     }
 
     private void OnTriggerEnter(Collider other)

@@ -1358,6 +1358,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 517109878}
   m_CullTransparentMesh: 1
+--- !u!1 &549564098
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 549564099}
+  m_Layer: 0
+  m_Name: PlayerPositionReset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &549564099
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549564098}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 630.92, y: 1.26512, z: 2356.54}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &668972711
 GameObject:
   m_ObjectHideFlags: 0
@@ -2633,6 +2664,10 @@ PrefabInstance:
       propertyPath: interactionMessage
       value: 
       objectReference: {fileID: 403576002}
+    - target: {fileID: 8228646336001002385, guid: 8d10b4cadeb74524893b7eddc5818b8f, type: 3}
+      propertyPath: playerPositionReset
+      value: 
+      objectReference: {fileID: 549564098}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4320,3 +4355,4 @@ SceneRoots:
   - {fileID: 1308181801}
   - {fileID: 90748392}
   - {fileID: 1077274086}
+  - {fileID: 549564099}

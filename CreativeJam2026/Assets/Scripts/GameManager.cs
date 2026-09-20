@@ -131,6 +131,8 @@ public class GameManager : MonoBehaviour
                     character.gameObject.SetActive(true);
                 }
 
+                player.ResetPlayerPosition();
+
                 yield return screenFader.FadeOut();
 
                 player.SetInputEnabled(InputMode.NEXT_MESSAGE_ONLY);
@@ -212,6 +214,8 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(blackScreenDuration);
 
+        player.ResetPlayerPosition();
+
         yield return screenFader.FadeOut();
 
         player.SetInputEnabled(InputMode.ENABLED);
@@ -245,22 +249,6 @@ public class GameManager : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-
-        //transitionText.text = "Day 2";
-        //transitionText.gameObject.SetActive(true);
-
-        //yield return new WaitForSeconds(transitionDuration);
-
-        //transitionText.gameObject.SetActive(false);
-
-        //yield return new WaitForSeconds(blackScreenDuration);
-
-        //yield return screenFader.FadeOut();
-
-        //transitionText.text = "Imagine this is the main menu";
-        //transitionText.gameObject.SetActive(true);
-
-        //player.SetInputEnabled(InputMode.ENABLED);
     }
 
     public void GoBackToMenu()
