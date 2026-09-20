@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI policeCallPromptText;
     [SerializeField] private TextMeshProUGUI monologText;
     [SerializeField] private TextMeshProUGUI interactionMessage;
+    [SerializeField] private Image dialogueBox;
     [SerializeField] private Image deathImage;
     [SerializeField] private Image winImage;
 
@@ -57,6 +58,7 @@ public class GameManager : MonoBehaviour
         policeCallText.gameObject.SetActive(false);
         policeCallPromptText.gameObject.SetActive(false);
         monologText.gameObject.SetActive(false);
+        dialogueBox.gameObject.SetActive(false);
 
         button1.gameObject.SetActive(false);
         button2.gameObject.SetActive(false);
@@ -199,6 +201,7 @@ public class GameManager : MonoBehaviour
         player.SetInteractionPromptActive(false);
 
         interactionMessage.gameObject.SetActive(false);
+        dialogueBox.gameObject.SetActive(false);
 
         player.SetInputEnabled(InputMode.DISABLED);
 
