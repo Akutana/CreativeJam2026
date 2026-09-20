@@ -1,6 +1,8 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
+using UnityEngine.UI;
 
 public enum InputMode
 {
@@ -21,6 +23,7 @@ public class FPSController : MonoBehaviour
     [SerializeField] private float interactionDistance = 5f;
     [SerializeField] private TextMeshProUGUI interactionPrompt;
     [SerializeField] private TextMeshProUGUI interactionMessage;
+    [SerializeField] private Image dialogueBox;
     [SerializeField] private GameManager gameManager;
 
     [SerializeField] private GameObject playerPositionReset;
@@ -154,6 +157,7 @@ public class FPSController : MonoBehaviour
             {
                 interactionMessage.text = "";
                 interactionMessage.gameObject.SetActive(false);
+                dialogueBox.gameObject.SetActive(false);
 
                 if (gameManager.GetCurrentDay() == 1)
                     gameManager.SetPoliceCallPromptActive(true);
@@ -177,6 +181,7 @@ public class FPSController : MonoBehaviour
         gameManager.SetPoliceCallPromptActive(false);
 
         interactionPrompt.gameObject.SetActive(false);
+        dialogueBox.gameObject.SetActive(true);
         interactionMessage.gameObject.SetActive(true);
 
         if (messages.Length > 0)
