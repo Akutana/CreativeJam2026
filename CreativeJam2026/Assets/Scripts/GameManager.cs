@@ -186,6 +186,8 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Resetting day 1");
 
+        interactionMessage.gameObject.SetActive(false);
+
         player.SetInputEnabled(InputMode.DISABLED);
 
         yield return screenFader.FadeIn();
