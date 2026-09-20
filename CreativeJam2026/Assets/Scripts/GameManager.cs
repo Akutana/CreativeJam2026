@@ -186,6 +186,8 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Resetting day 1");
 
+        player.SetInteractionPromptActive(false);
+
         interactionMessage.gameObject.SetActive(false);
 
         player.SetInputEnabled(InputMode.DISABLED);
@@ -226,6 +228,8 @@ public class GameManager : MonoBehaviour
     private IEnumerator Win()
     {
         Debug.Log("Win");
+
+        player.SetInteractionPromptActive(false);
 
         player.SetInputEnabled(InputMode.DISABLED);
 

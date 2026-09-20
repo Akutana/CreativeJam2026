@@ -189,6 +189,11 @@ public class FPSController : MonoBehaviour
         playerCamera.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
     }
 
+    public void SetInteractionPromptActive(bool active)
+    {
+        interactionPrompt.gameObject.SetActive(active);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("DeadAdrian"))
