@@ -74,7 +74,7 @@ public class MusicJukebox : MonoBehaviour
         if (waitTime > 0f)
             yield return new WaitForSeconds(waitTime);
 
-        JukeboxLoop();
+        jukeboxRoutine = StartCoroutine(JukeboxLoop());
 
     }
 
@@ -109,7 +109,7 @@ public class MusicJukebox : MonoBehaviour
         if (waitTime > 0f)
             yield return new WaitForSeconds(waitTime);
 
-        JukeboxLoop();
+        jukeboxRoutine = StartCoroutine(JukeboxLoop());
 
     }
 
@@ -145,7 +145,7 @@ public class MusicJukebox : MonoBehaviour
         if (waitTime > 0f)
             yield return new WaitForSeconds(waitTime);
 
-        JukeboxLoop();
+        jukeboxRoutine = StartCoroutine(JukeboxLoop());
 
     }
 
