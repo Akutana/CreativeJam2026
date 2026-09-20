@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private float morningImageDuration;
 
+    [SerializeField] private GameObject yesterdayDiner;
+
     int currentDay = -1;
 
     private Coroutine choiceTimerCoroutine;
@@ -60,6 +62,8 @@ public class GameManager : MonoBehaviour
         backToMenuButton.gameObject.SetActive(false);
 
         morningImage.gameObject.SetActive(false);
+
+        yesterdayDiner.SetActive(false);
 
         foreach (GameObject character in characters)
         {
@@ -130,6 +134,8 @@ public class GameManager : MonoBehaviour
                 {
                     character.gameObject.SetActive(true);
                 }
+
+                yesterdayDiner.SetActive(true);
 
                 player.ResetPlayerPosition();
 
