@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI monologText;
     [SerializeField] private TextMeshProUGUI interactionMessage;
     [SerializeField] private Image deathImage;
+    [SerializeField] private Image winImage;
 
     [SerializeField] private Image morningImage;
     [SerializeField] private Animator animator;
@@ -64,6 +65,7 @@ public class GameManager : MonoBehaviour
 
         morningImage.gameObject.SetActive(false);
         deathImage.gameObject.SetActive(false);
+        winImage.gameObject.SetActive(false);
 
         yesterdayDiner.SetActive(false);
 
@@ -247,12 +249,14 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(transitionDuration);
 
+        winImage.gameObject.SetActive(true);
         transitionText.text = "You found the murderer";
         transitionText.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(transitionDuration);
 
         transitionText.gameObject.SetActive(false);
+        // winImage.gameObject.SetActive(false);
 
         yield return new WaitForSeconds(transitionDuration);
 
