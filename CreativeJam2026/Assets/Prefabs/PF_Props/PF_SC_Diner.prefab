@@ -1872,7 +1872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4035158485369800177, guid: ac974159d17cd164cba004cac312ebd1, type: 3}
       propertyPath: m_Name
-      value: YesterdayDiner
+      value: SM_P_YesterdayDiner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
