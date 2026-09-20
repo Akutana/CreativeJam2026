@@ -3,6 +3,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Reflection;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,9 +16,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI monologText;
     [SerializeField] private TextMeshProUGUI interactionMessage;
 
-    [SerializeField] private Sprite morning20;
-    [SerializeField] private Sprite morning19;
     [SerializeField] private Image morningImage;
+    [SerializeField] private Animator animator;
 
     [SerializeField] private float blackScreenDuration = 2f;
     [SerializeField] private float transitionDuration = 3f;
@@ -87,8 +87,8 @@ public class GameManager : MonoBehaviour
             case 0:
                 yield return new WaitForSeconds(blackScreenDuration);
 
-                morningImage.sprite = morning20;
                 morningImage.gameObject.SetActive(true);
+                animator.Play("ZZZs sept 20");
 
                 yield return new WaitForSeconds(morningImageDuration);
 
@@ -108,8 +108,8 @@ public class GameManager : MonoBehaviour
 
                 yield return new WaitForSeconds(blackScreenDuration);
 
-                morningImage.sprite = morning19;
                 morningImage.gameObject.SetActive(true);
+                animator.Play("ZZZs sept19");
 
                 yield return new WaitForSeconds(morningImageDuration);
 
@@ -207,8 +207,8 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(transitionDuration);
 
-        morningImage.sprite = morning19;
         morningImage.gameObject.SetActive(true);
+        animator.Play("ZZZs sept19");
 
         yield return new WaitForSeconds(morningImageDuration);
 
