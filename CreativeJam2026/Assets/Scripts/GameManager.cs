@@ -370,7 +370,6 @@ public class GameManager : MonoBehaviour
 
     public void WrongAnswer()
     {
-
         StartCoroutine(jukebox.playGameOver());
 
         Cursor.lockState = CursorLockMode.Locked;
