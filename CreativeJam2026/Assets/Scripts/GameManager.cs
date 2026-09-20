@@ -50,6 +50,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI countdownText;
     [SerializeField] private GameObject clock;
 
+    [SerializeField] private MusicJukebox jukebox;
+
     bool countdownStopped = false;
 
     int currentDay = -1;
@@ -368,6 +370,9 @@ public class GameManager : MonoBehaviour
 
     public void WrongAnswer()
     {
+
+        StartCoroutine(jukebox.playGameOver());
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 

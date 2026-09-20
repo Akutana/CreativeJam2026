@@ -11,6 +11,7 @@ public class MusicJukebox : MonoBehaviour
     [Header("Record Change")]
     [SerializeField] private AudioSource recordSource;
     [SerializeField] private AudioClip recordChangeSound;
+    [SerializeField] private AudioClip gameOverMusic;
 
     [Header("Volume")]
     [SerializeField, Range(0f, 1f)]
@@ -41,6 +42,40 @@ public class MusicJukebox : MonoBehaviour
             jukeboxRoutine = StartCoroutine(JukeboxLoop());
     }
 
+    public IEnumerator playGameOver() {
+
+        StopCoroutine(jukeboxRoutine);
+
+        yield return FadeVolume(
+            musicSource,
+            musicSource.volume,
+            0f,
+            fadeOutDuration
+        );
+
+        musicSource.Stop();
+
+        musicSource.clip = gameOverMusic;
+        musicSource.volume = 0f;
+        musicSource.Play();
+
+
+        yield return FadeVolume(
+        musicSource,
+        0f,
+        musicVolume,
+        fadeInDuration
+        );
+
+        float waitTime = gameOverMusic.length;
+
+        if (waitTime > 0f)
+            yield return new WaitForSeconds(waitTime);
+
+        JukeboxLoop();
+
+    }
+
     private void SetupSources()
     {
         if (musicSource == null)
@@ -58,6 +93,13 @@ public class MusicJukebox : MonoBehaviour
             recordSource.loop = false;
             recordSource.playOnAwake = false;
             recordSource.volume = recordVolume;
+        }
+
+        if (gameOverMusic != null)
+        {
+            recordSource.loop = false;
+            recordSource.playOnAwake = false;
+            recordSource.volume = musicVolume;
         }
     }
 
