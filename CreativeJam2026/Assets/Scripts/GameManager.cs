@@ -300,6 +300,8 @@ public class GameManager : MonoBehaviour
         button2.gameObject.SetActive(false);
         button3.gameObject.SetActive(false);
 
+        screenFader.SetClear();
+
         StartCoroutine(Win());
     }
 
@@ -312,6 +314,8 @@ public class GameManager : MonoBehaviour
         button1.gameObject.SetActive(false);
         button2.gameObject.SetActive(false);
         button3.gameObject.SetActive(false);
+
+        screenFader.SetClear();
 
         StartCoroutine(GameOver("The killer saw you accusing other suspects. He killed you."));
     }
@@ -338,6 +342,8 @@ public class GameManager : MonoBehaviour
         button1.gameObject.SetActive(true);
         button2.gameObject.SetActive(true);
         button3.gameObject.SetActive(true);
+
+        screenFader.SetScreenAlpha(0.65f);
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

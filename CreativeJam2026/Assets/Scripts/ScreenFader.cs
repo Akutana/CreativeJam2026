@@ -17,6 +17,11 @@ public class ScreenFader : MonoBehaviour
         SetAlpha(0f);
     }
 
+    public void SetScreenAlpha(float alpha)
+    {
+        SetAlpha(alpha);
+    }
+
     public IEnumerator FadeOut()
     {
         yield return Fade(1f, 0f, defaultFadeDuration);
