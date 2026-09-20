@@ -15,6 +15,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI monologText;
     [SerializeField] private TextMeshProUGUI interactionMessage;
 
+    [SerializeField] private Sprite morning20;
+    [SerializeField] private Sprite morning19;
+    [SerializeField] private Image morningImage;
+
     [SerializeField] private float blackScreenDuration = 2f;
     [SerializeField] private float transitionDuration = 3f;
     [SerializeField] private float narrationDuration = 4f;
@@ -27,19 +31,13 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private KeyCode callPoliceKey;
 
-    //[SerializeField] private GameObject charAdrian;
-    //[SerializeField] private GameObject charKevin;
-    //[SerializeField] private GameObject charSophie;
-    //[SerializeField] private GameObject charJames;
-    //[SerializeField] private GameObject charAndy;
-    //[SerializeField] private GameObject charJune;
-    //[SerializeField] private GameObject charMartha;
-
     [SerializeField] private GameObject[] characters;
     [SerializeField] private GameObject knife;
     [SerializeField] private GameObject deadAdrian;
 
     [SerializeField] private GameObject[] collidersAdrian;
+
+    [SerializeField] private float morningImageDuration;
 
     int currentDay = -1;
 
@@ -58,6 +56,8 @@ public class GameManager : MonoBehaviour
         button1.gameObject.SetActive(false);
         button2.gameObject.SetActive(false);
         button3.gameObject.SetActive(false);
+
+        morningImage.gameObject.SetActive(false);
 
         foreach (GameObject character in characters)
         {
@@ -85,12 +85,12 @@ public class GameManager : MonoBehaviour
             case 0:
                 yield return new WaitForSeconds(blackScreenDuration);
 
-                transitionText.text = "Day 0";
-                transitionText.gameObject.SetActive(true);
+                morningImage.sprite = morning20;
+                morningImage.gameObject.SetActive(true);
 
-                yield return new WaitForSeconds(transitionDuration);
+                yield return new WaitForSeconds(morningImageDuration);
 
-                transitionText.gameObject.SetActive(false);
+                morningImage.gameObject.SetActive(false);
 
                 yield return StartDay0();
 
@@ -106,12 +106,12 @@ public class GameManager : MonoBehaviour
 
                 yield return new WaitForSeconds(blackScreenDuration);
 
-                transitionText.text = "Day 1";
-                transitionText.gameObject.SetActive(true);
+                morningImage.sprite = morning19;
+                morningImage.gameObject.SetActive(true);
 
-                yield return new WaitForSeconds(transitionDuration);
+                yield return new WaitForSeconds(morningImageDuration);
 
-                transitionText.gameObject.SetActive(false);
+                morningImage.gameObject.SetActive(false);
 
                 deadAdrian.gameObject.SetActive(false);
 
@@ -181,21 +181,21 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(blackScreenDuration);
 
-        transitionText.text = message;
-        transitionText.gameObject.SetActive(true);
+        narrationText.text = message;
+        narrationText.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(transitionDuration);
 
-        transitionText.gameObject.SetActive(false);
+        narrationText.gameObject.SetActive(false);
 
         yield return new WaitForSeconds(transitionDuration);
 
-        transitionText.text = "Day 1";
-        transitionText.gameObject.SetActive(true);
+        morningImage.sprite = morning19;
+        morningImage.gameObject.SetActive(true);
 
-        yield return new WaitForSeconds(transitionDuration);
+        yield return new WaitForSeconds(morningImageDuration);
 
-        transitionText.gameObject.SetActive(false);
+        morningImage.gameObject.SetActive(false);
 
         yield return StartDay1();
 
@@ -327,12 +327,6 @@ public class GameManager : MonoBehaviour
         }
 
         ////////////////// DEBUG ///////////////////
-        //if (Input.GetKeyDown(KeyCode.B) &&
-        //    currentDay == -1)
-        //{
-        //    StartCoroutine(StartDay(0, false));
-        //}
-
         if (Input.GetKeyDown(KeyCode.N) &&
             currentDay == 0)
         {
