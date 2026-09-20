@@ -339,8 +339,12 @@ PrefabInstance:
       value: James
       objectReference: {fileID: 0}
     - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: nextMessageKey
+      value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
       propertyPath: interactionText
-      value: Talk to James
+      value: to talk to James
       objectReference: {fileID: 0}
     - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
       propertyPath: interactionMessage.Array.size
@@ -1123,8 +1127,12 @@ PrefabInstance:
       value: Kevin
       objectReference: {fileID: 0}
     - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: nextMessageKey
+      value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
       propertyPath: interactionText
-      value: Talk to Kevin
+      value: to talk to Kevin
       objectReference: {fileID: 0}
     - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
       propertyPath: interactionMessage.Array.size
@@ -1821,13 +1829,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fd8fcbf14f4e2428bb1da066f523e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  interactionText: 'Talk to Adrian '
+  interactionText: 'to talk to Adrian '
   interactionMessage:
   - "I keep on trying to tell my sous chef, Kevin, what to do but he just doesn\u2019t listen to me. He always wants to do things his way instead of just doing what I tell him. There are orders to fill and food to make, I don\u2019t understand what\u2019s so hard about listening to your boss."
   - "My wife? Sometimes she\u2019ll say that she\u2019s unhappy with me, but I think she needs to be more understanding. She just doesn\u2019t get how important this diner is to me. It's hard work to run this place and my time is valuable, I can\u2019t be preoccupied with her feelings all the time."
   - "Oh James? That scoundrel thinks he can come around here and flirt with my wife like he owns the place. That nuthead just won\u2019t learn his lesson. When will he just leave my wife alone?"
   interactionKey: 101
-  nextMessageKey: 32
+  nextMessageKey: 101
 --- !u!65 &668972717
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3496,9 +3504,9 @@ MonoBehaviour:
   winImage: {fileID: 1301813611}
   morningImage: {fileID: 682760248}
   animator: {fileID: 682760250}
-  blackScreenDuration: 3
-  transitionDuration: 4
-  narrationDuration: 6
+  blackScreenDuration: 0
+  transitionDuration: 0
+  narrationDuration: 0
   choiceTimerDuration: 60
   morningFadeDuration: 1
   button1: {fileID: 1107622827}
@@ -4089,12 +4097,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fd8fcbf14f4e2428bb1da066f523e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  interactionText: Talk to Andy
+  interactionText: to talk to Andy
   interactionMessage:
   - "I don\u2019t come here very often, but when I do, the food is always soooo good!"
   - "I have heard the chef yelling in the kitchen quite often though, I think he and his sous chef don\u2019t really get along."
   interactionKey: 101
-  nextMessageKey: 32
+  nextMessageKey: 101
 --- !u!114 &1818281635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4408,8 +4416,12 @@ PrefabInstance:
       value: June
       objectReference: {fileID: 0}
     - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: nextMessageKey
+      value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
       propertyPath: interactionText
-      value: Talk to June
+      value: to talk to June
       objectReference: {fileID: 0}
     - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
       propertyPath: interactionMessage.Array.size
@@ -4654,14 +4666,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fd8fcbf14f4e2428bb1da066f523e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  interactionText: Talk to Martha
+  interactionText: to talk to Martha
   interactionMessage:
   - "I\u2019ve been working here since the diner opened and, trust me, I see everything."
   - "Sophie resents Adrian for loving his restaurant more than her, but she still loves him so she can\u2019t bring herself to do anything about it."
   - "Kevin, the sous chef has had enough of his boss and I\u2019m sure he would do anything to take ownership of the restaurant."
   - "James comes to see Sophie all the time, I think that if he\u2019s persistent enough he might end up convincing her to go with him and leave it all behind."
   interactionKey: 101
-  nextMessageKey: 32
+  nextMessageKey: 101
 --- !u!114 &2135816073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4911,8 +4923,12 @@ PrefabInstance:
       value: Sophie
       objectReference: {fileID: 0}
     - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: nextMessageKey
+      value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
       propertyPath: interactionText
-      value: Talk to Sophie
+      value: to talk to Sophie
       objectReference: {fileID: 0}
     - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
       propertyPath: interactionMessage.Array.size

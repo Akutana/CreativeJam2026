@@ -120,7 +120,8 @@ public class FPSController : MonoBehaviour
 
             if (interactable != null)
             {
-                interactionPrompt.text = interactable.GetInteractionText();
+                string interactionText = "Press [" + interactable.GetInteractionKey() + "] " + interactable.GetInteractionText();
+                interactionPrompt.text = interactionText;
                 interactionPrompt.gameObject.SetActive(true);
 
                 return;

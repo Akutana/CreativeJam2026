@@ -126,8 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fd8fcbf14f4e2428bb1da066f523e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  interactionText: Burger
+  interactionText: 
   interactionMessage:
   - Mmmm burger.
   interactionKey: 101
-  nextMessageKey: 32
+  nextMessageKey: 101
