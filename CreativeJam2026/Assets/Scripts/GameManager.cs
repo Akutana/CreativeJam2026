@@ -40,16 +40,19 @@ public class GameManager : MonoBehaviour
         button2.gameObject.SetActive(false);
         button3.gameObject.SetActive(false);
 
-        screenFader.SetClear();
+        //screenFader.SetClear();
+
+        StartCoroutine(StartDay(0, false));
     }
 
-    private IEnumerator StartDay(int day)
+    private IEnumerator StartDay(int day, bool fadeIn)
     {
         currentDay = day;
 
         player.SetInputEnabled(InputMode.DISABLED);
 
-        yield return screenFader.FadeIn();
+        if (fadeIn)
+            yield return screenFader.FadeIn();
 
         switch (day)
         {
@@ -256,16 +259,16 @@ public class GameManager : MonoBehaviour
         }
 
         ////////////////// DEBUG ///////////////////
-        if (Input.GetKeyDown(KeyCode.B) &&
-            currentDay == -1)
-        {
-            StartCoroutine(StartDay(0));
-        }
+        //if (Input.GetKeyDown(KeyCode.B) &&
+        //    currentDay == -1)
+        //{
+        //    StartCoroutine(StartDay(0, false));
+        //}
 
         if (Input.GetKeyDown(KeyCode.N) &&
             currentDay == 0)
         {
-            StartCoroutine(StartDay(1));
+            StartCoroutine(StartDay(1, true));
         }
 
         if (Input.GetKeyDown(KeyCode.R) &&

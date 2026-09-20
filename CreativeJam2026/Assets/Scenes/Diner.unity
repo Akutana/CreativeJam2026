@@ -256,6 +256,107 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4153684}
   m_CullTransparentMesh: 1
+--- !u!1001 &52554582
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 619.161
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.596
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2357.185
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9317949
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.36298534
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 42.567
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2452672031720456066, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7047303457610331633, guid: c83afa4b6095cc641b0ba5d44982860b, type: 3}
+    - target: {fileID: 2452672031720456066, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8199070048874438330, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_Name
+      value: James
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: interactionText
+      value: Talk to James
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: interactionMessage.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: 'interactionMessage.Array.data[0]'
+      value: "I have known Adrian and Sophie for quite some time now. I used to be quite good friends with Adrian, before they got married. But now it\u2019s all changed. I hate the way he treats her. She is a beautiful and ambitious woman, and she deserves so much more than what he gives her."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: 'interactionMessage.Array.data[1]'
+      value: "We actually dated for a bit, me and Sophie. A long time ago. Adrian used to be my best friend. But I\u2019ll never forgive him for what he did. He\u2019s a hotheaded selfish prick, and she\u2019s as beautiful as ever."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: 'interactionMessage.Array.data[2]'
+      value: "I know I can offer her the love and stability that he can\u2019t. I come here because it\u2019s the only place I have where I can still see her. I know Adrian hates it, because he messes up my order every time."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984048477570034797, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_Size.x
+      value: 2.6783106
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984048477570034797, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_Size.y
+      value: 10.240006
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984048477570034797, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_Center.x
+      value: 0.18402012
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984048477570034797, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_Center.z
+      value: 0.0000001563648
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
 --- !u!1 &71833943
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,6 +863,111 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 945590e32c985a040869353b726555da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FPSController
+--- !u!1001 &362283025
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 621.229
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.596
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2360.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.85454327
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5193803
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -62.581
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2452672031720456066, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -529720201442265145, guid: 3fc709575ab136b4883241bea821043a, type: 3}
+    - target: {fileID: 2452672031720456066, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8199070048874438330, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_Name
+      value: Kevin
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: interactionText
+      value: Talk to Kevin
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: interactionMessage.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: 'interactionMessage.Array.data[0]'
+      value: "The head chef? He\u2019s stubborn and high strung. He yells all the time and keeps telling me that I\u2019m messing up the orders. I\u2019m just trying to make the plates more interesting, but he insists on staying \u201Cold-school\u201D."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: 'interactionMessage.Array.data[1]'
+      value: "And you know what the worst part of it is? He\u2019s taken multiple of my recipes, and added them to the menu literally days after he yelled my face off for \u201Cnot doing it right\u201D. Then he gets all the credit from everyone else in the kitchen for my work."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: 'interactionMessage.Array.data[2]'
+      value: "He knows I have a better vision for this diner. He\u2019s just scared to admit it."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984048477570034797, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_Size.x
+      value: 2.296463
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984048477570034797, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_Size.y
+      value: 10.240006
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984048477570034797, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_Size.z
+      value: 0.1999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984048477570034797, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_Center.x
+      value: -0.5967057
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984048477570034797, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_Center.z
+      value: 0.0000012584435
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
 --- !u!1 &403576000
 GameObject:
   m_ObjectHideFlags: 0
@@ -2735,8 +2941,8 @@ MonoBehaviour:
   interactionMessage:
   - "I don\u2019t come here very often, but when I do, the food is always soooo good!"
   - "I have heard the chef yelling in the kitchen quite often though, I think he and his sous chef don\u2019t really get along."
-  interactionKey: 0
-  nextMessageKey: 0
+  interactionKey: 101
+  nextMessageKey: 32
 --- !u!114 &1818281635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2809,6 +3015,103 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!1001 &2108396783
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 619.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.596
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2364.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5004609
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.8657592
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 119.939
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2452672031720456066, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2429884695898635251, guid: 28a2935291ec9394da3039d8b9b4ae48, type: 3}
+    - target: {fileID: 2452672031720456066, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8199070048874438330, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_Name
+      value: June
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: interactionText
+      value: Talk to June
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: interactionMessage.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: 'interactionMessage.Array.data[0]'
+      value: "I\u2019m a friend of Sophie\u2019s. I come here after a long day of working and dealing with the kids. She always knows how to cheer me up with some gossip and a drink on the house."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: 'interactionMessage.Array.data[1]'
+      value: "She\u2019s told me a little about the issues she\u2019s been having with her husband. Apparently this gentleman, James, comes to visit her here to offer her some kind of better life. She seems hesitant."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984048477570034797, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_Size.x
+      value: 2.6009812
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984048477570034797, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_Size.y
+      value: 10.240006
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984048477570034797, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_Center.x
+      value: 0.04952875
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984048477570034797, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_Center.z
+      value: 5.888412e-11
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
 --- !u!1 &2109631380
 GameObject:
   m_ObjectHideFlags: 0
@@ -3020,8 +3323,8 @@ MonoBehaviour:
   - "Sophie resents Adrian for loving his restaurant more than her, but she still loves him so she can\u2019t bring herself to do anything about it."
   - "Kevin, the sous chef has had enough of his boss and I\u2019m sure he would do anything to take ownership of the restaurant."
   - "James comes to see Sophie all the time, I think that if he\u2019s persistent enough he might end up convincing her to go with him and leave it all behind."
-  interactionKey: 0
-  nextMessageKey: 0
+  interactionKey: 101
+  nextMessageKey: 32
 --- !u!114 &2135816073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3094,6 +3397,107 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!1001 &7662073651668274476
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 621.296
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.596
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2357.424
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.72496015
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.68879086
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 87.069
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448449543784970925, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2452672031720456066, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7721344634700953239, guid: 9994f02f1ba124c42bb939bc881a9581, type: 3}
+    - target: {fileID: 2452672031720456066, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8199070048874438330, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_Name
+      value: Sophie
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: interactionText
+      value: Talk to Sophie
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: interactionMessage.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: 'interactionMessage.Array.data[0]'
+      value: "My husband? He\u2019s become an angry old man. I remember when we were young, he\u2019d talk about his big dreams of opening the perfect diner, about working together and supporting each other\u2019s dreams, but now I look at him and I feel like I can\u2019t recognize him anymore."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682519443021358668, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: 'interactionMessage.Array.data[1]'
+      value: "Working has eaten away at him and he\u2019s become a shell of who he once was. He barely spares me a glance, and when he does, it's always to complain about something. What he promised me has brought me nothing but pain... I wish I could do something about it."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984048477570034797, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_Size.x
+      value: 2.2738636
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984048477570034797, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_Size.y
+      value: 10.240006
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984048477570034797, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_Size.z
+      value: 0.20000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984048477570034797, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_Center.x
+      value: -0.6420314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984048477570034797, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
+      propertyPath: m_Center.z
+      value: -0.000000008875064
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3f693e1ecc8f694d944803d102f3038, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3110,3 +3514,7 @@ SceneRoots:
   - {fileID: 233719442}
   - {fileID: 1818281632}
   - {fileID: 2135816070}
+  - {fileID: 7662073651668274476}
+  - {fileID: 362283025}
+  - {fileID: 52554582}
+  - {fileID: 2108396783}
