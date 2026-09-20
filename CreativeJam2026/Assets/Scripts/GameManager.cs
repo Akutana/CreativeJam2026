@@ -382,7 +382,7 @@ public class GameManager : MonoBehaviour
 
         screenFader.SetClear();
 
-        StartCoroutine(GameOver("The killer saw you accusing other suspects. He killed you."));
+        StartCoroutine(GameOver("The killer saw you accusing other suspects. They killed you."));
     }
 
     private void CallPolice()
